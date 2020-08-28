@@ -8,7 +8,7 @@ import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import logger from 'redux-logger';
 // Import saga middleware
-import createSagaMiddleware from 'redux-saga';
+import createSagaMiddleware from 'redux-saga'; 
 
 // Create the rootSaga generator function
 function* rootSaga() {

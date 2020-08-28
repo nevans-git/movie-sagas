@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {HashRouter as Router, Route} from 'react-router-dom';
-import './App.css';
+import './App.css'; 
 
 class App extends Component {
   // Renders the entire app on the DOM
