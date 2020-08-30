@@ -9,10 +9,44 @@ import { Provider } from 'react-redux';
 import logger from 'redux-logger';
 // Import saga middleware
 import createSagaMiddleware from 'redux-saga'; 
+import axios from 'axios';
+import { takeEvery, put} from 'redux-saga/effects';
 
 // Create the rootSaga generator function
 function* rootSaga() {
+    yield takeEvery('FETCH_GENRES', getTheGenres )
+    yield takeEvery('DISPLAY_MOVIES', fetchMovies)
 
+}
+
+// NOT SURE IF I SET THIS UP RIGHT...
+// SAGA function getting data from the DB
+function* getTheGenres(){
+    try{
+        let response = yield axios.get('/api/genre')
+        console.log(response.data);
+        
+        yield put({ type: 'GET_GENRES', payload: response.data })
+
+    } catch (error) {
+        console.log('error in GET getTheGenres:', error);
+        
+    }
+}
+
+// TRYING TO GET MOVIES TO DISPLAY HERE
+function* fetchMovies(){
+    try{
+        // console.log(action.payload);
+        let response  = yield axios.get('/api/movie'); // might need to add a key here
+
+        console.log(response.data);
+        
+        yield put({type: 'SET_MOVIES', payload: response.data})
+    } catch (error) {
+        console.log('error in POST request!', error);
+        
+    }
 }
 
 // Create sagaMiddleware

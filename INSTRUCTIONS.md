@@ -20,8 +20,9 @@ We'll be able to see movies that exist in our DB. We'll also be able to see deta
 
 ## Notes
 
+-----BACKEND------------
 ### Genres
-We've given you some starter genres in the database. Feel free to change or add some with Postico. You'll need to write out the whole GET flow to get the genres from your database to your client.
+We've given you some starter genres in the database. Feel free to change or add some with Postico. [UNSURE(genre.router.js...index.js...MovieListView.jsx)] You'll need to write out the whole GET flow to get the genres from your database to your client.
  
 ### Movies
 We've added some movie posters in the `public/images` folder, and the database is set up to use them.
@@ -33,11 +34,17 @@ Genres can be applied to many different movies. Movies can have multiple genres.
 
 > NOTE: Start by taking inventory of the existing code. Part of the work for setting up sagas has been done for you.
 
-### Home / List Page
+-------END OF BACKEND---------
+
+### Home / Movie List Page
+
+- A BUNCH OF POSTERS, TITLES, AND DESCRIPTION
 
 This should display all of the movies in the movie database. When a movie poster is clicked, a user should be brought to the `/details` view.
 
 ### Details Page
+
+- DISPLAYING SPECIFIC MOVIE GENRES
 
 This should show all details **including genres**, for the selected movie.
 
@@ -54,15 +61,15 @@ The details page should have the button:
 
 This should show:
 
-- an input field (for the movie title)
-- an input field (for the movie poster image URL))
-- a textarea (for the movie description)
-- a dropdown (for the genres)
+- [] an input field (for the movie title)
+- [] an input field (for the movie poster image URL))
+- [] a textarea (for the movie description)
+- [] a dropdown (for the genres)
 
 The Add Movie page should have the buttons:
 
-- `Cancel` button, which should bring the user to the Home/List Page
-- `Save` button, which should update the title and description in the database and bring the user to the Home/List Page (which now has the new movie)
+- [x] `Cancel` button, which should bring the user to the Home/List Page
+- [] `Save` button, which should update the title and description in the database and bring the user to the Home/List Page (which now has the new movie)
 
 > Hint: Look at the /api/movie POST route -- it's been made already
 > Hint: You'll want to use the genres that are in the db for your dropdown

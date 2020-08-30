@@ -2,6 +2,22 @@ const express = require('express');
 const router = express.Router();
 const pool = require('../modules/pool')
 
+// SET UP GET TO GET MOVIES SO THEY POST TO DOM
+router.get('/', (req, res) => {
+  let queryText = `SELECT * FROM "movies"`;
+
+  pool.query(queryText).then((response) => {
+    console.log(response.rows);
+    
+    res.send(response.rows)
+
+  }).catch((error) => {
+    console.log('error in GET in movie.router.js:', error);
+    res.sendStatus(500);
+    
+  })
+})
+
 router.post('/', (req, res) => {
   console.log(req.body);
   // RETURNING "id" will give us back the id of the created movie
@@ -13,7 +29,7 @@ router.post('/', (req, res) => {
   // FIRST QUERY MAKES MOVIE
   pool.query(insertMovieQuery, [req.body.title, req.body.poster, req.body.description])
   .then(result => {
-    console.log('New Movie Id:', result.rows[0].id); //ID IS HERE!
+    console.log('New Movie Id:', result.rows[0].id); // ID IS HERE!
     
     const createdMovieId = result.rows[0].id
 
