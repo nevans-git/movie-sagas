@@ -38,7 +38,7 @@ class MovieListView extends Component {
                 console.log(displayMovies);
                 return(
                     <div>
-                         {/* <h3>{displayMovies.title}</h3> */}
+                         <h3>{displayMovies.title}</h3>
                          <img src={displayMovies.poster} onClick={this.handleImageClick}/>
                         {/* <p>{displayMovies.description}</p> */}
                     </div>
