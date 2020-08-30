@@ -14,6 +14,8 @@ class DetailsView extends Component {
 
     backToMovieListBtn = () => {
         console.log('Send back to movies list');
+
+        this.props.history.push('/home');
         
     }
 

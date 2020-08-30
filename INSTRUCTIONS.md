@@ -64,7 +64,7 @@ This should show:
 - [x] an input field (for the movie title)
 - [x] an input field (for the movie poster image URL))
 - [x] a textarea (for the movie description)
-- [] a dropdown (for the genres)
+- [almost] a dropdown (for the genres)
 
 The Add Movie page should have the buttons:
 
