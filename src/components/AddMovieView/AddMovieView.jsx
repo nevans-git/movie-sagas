@@ -9,7 +9,8 @@ class AddMovieView extends Component {
     state = {
         newMovie: '',
         newMovieUrl: '',
-        newMovieDescription: ''
+        newMovieDescription: '',
+        movieGenreId: 0
 
     }
 
@@ -55,6 +56,72 @@ class AddMovieView extends Component {
         this.props.history.push('/home');
     }
 
+    handleDropdown = (event) => {
+        switch (event.target.value){
+            case 'adventure':
+                this.setState({
+                    movieGenreId: 1
+                }) // set up for each case
+            case 'animated':
+                this.setState({
+                    movieGenreId: 2
+                });
+            case 'biographical':
+                this.setState({
+                    movieGenreId: 3
+                });
+            case 'comedy':
+                this.setState({
+                    movieGenreId: 4
+                });
+            case 'disaster':
+                this.setState({
+                    movieGenreId: 5
+                });
+            case 'drama':
+                this.setState({
+                    movieGenreId: 6
+                });
+            case 'epic':
+                this.setState({
+                    movieGenreId: 7
+                });
+            case 'fantasy':
+                this.setState({
+                    movieGenreId: 8
+                });
+            case 'musical':
+                this.setState({
+                    movieGenreId: 9
+                });
+            case 'romantic':
+                this.setState({
+                    movieGenreId: 10
+                });
+            case 'science fiction':
+                this.setState({
+                    movieGenreId: 11
+                });
+            case 'space-opera':
+                this.setState({
+                    movieGenreId: 12
+                });
+            case 'superhero':
+                this.setState({
+                    movieGenreId: 13
+                });
+            case 'thriller':
+                this.setState({
+                    movieGenreId: 14
+                });
+            case 'action':
+                this.setState({
+                    movieGenreId: 15
+                });
+        }
+        
+    }
+
     render(){
         return(
             <>
@@ -79,6 +146,8 @@ class AddMovieView extends Component {
                 <option value="science fiction">Science Fiction</option>
                 <option value="space-opera">Space-Opera</option>
                 <option value="superhero">Superhero</option>
+                <option value="thriller">Thriller</option>
+                <option value="action">Action</option>
             </select>
             <br />
             <br />

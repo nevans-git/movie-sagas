@@ -55,7 +55,7 @@ function* saveMovie(action){
     try{
         let response = yield axios.post('/api/movie', action.payload)
         
-        yield put({ type: 'FETCH_NEW_MOVIE'})
+        yield put({ type: 'FETCH_NEW_MOVIE'}) // reloading
 
     } catch (error) {
         console.log('error in POST request!', error);
