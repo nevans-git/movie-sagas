@@ -42,14 +42,15 @@ class AddMovieView extends Component {
         })
     }
 
-    handleNewMovieSave = () => {
+    handleNewMovieSave = (newMovieData) => {
         console.log('new movie added to DB!');
 
-        this.props.history.push('/home')
+        this.props.dispatch({ type: 'SET_SAVE', payload: newMovieData })
+        this.props.history.push('/home');
 
     }
 
-    cancleBtn = () => {
+    cancelBtn = () => {
         
         this.props.history.push('/home');
     }
@@ -64,9 +65,26 @@ class AddMovieView extends Component {
             <h3>Description</h3>
             <input type="text" placeholder="Add Movie Description" onChange={this.handleAddMovieDescInput}></input>
             <br />
+            <select>
+                <option value="adventure">Adventure</option>
+                <option value="animated">Animated</option>
+                <option value="biographical">Biographical</option>
+                <option value="comedy">Comedy</option>
+                <option value="disaster">Disaster</option>
+                <option value="drama">Drama</option>
+                <option value="epic">Epic</option>
+                <option value="fantasy">Fantasy</option>
+                <option value="musical">Musical</option>
+                <option value="romantic">Romantic</option>
+                <option value="science fiction">Science Fiction</option>
+                <option value="space-opera">Space-Opera</option>
+                <option value="superhero">Superhero</option>
+            </select>
+            <br />
+            <br />
+            
             <button onClick={this.handleNewMovieSave}>Save</button>
-            <button onClick={this.cancleBtn}>Cancel</button>
-
+            <button onClick={this.cancelBtn}>Cancel</button>
             </>
         )
     }

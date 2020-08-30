@@ -16,6 +16,7 @@ import { takeEvery, put} from 'redux-saga/effects';
 function* rootSaga() {
     yield takeEvery('FETCH_GENRES', getTheGenres )
     yield takeEvery('DISPLAY_MOVIES', fetchMovies)
+    yield takeEvery('SET_SAVE', saveMovie)
 
 }
 
@@ -43,6 +44,19 @@ function* fetchMovies(){
         console.log(response.data);
         
         yield put({type: 'SET_MOVIES', payload: response.data})
+    } catch (error) {
+        console.log('error in GET request!', error);
+        
+    }
+}
+
+// SAVING MOVIE TO THE DATA BASE
+function* saveMovie(action){
+    try{
+        let response = yield axios.post('/api/movie', action.payload)
+        
+        yield put({ type: 'FETCH_NEW_MOVIE'})
+
     } catch (error) {
         console.log('error in POST request!', error);
         
