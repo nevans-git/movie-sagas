@@ -22,7 +22,7 @@ We'll be able to see movies that exist in our DB. We'll also be able to see deta
 
 -----BACKEND------------
 ### Genres
-We've given you some starter genres in the database. Feel free to change or add some with Postico. [UNSURE(genre.router.js...index.js...MovieListView.jsx)] You'll need to write out the whole GET flow to get the genres from your database to your client.
+We've given you some starter genres in the database. Feel free to change or add some with Postico. You'll need to write out the whole GET flow to get the genres from your database to your client.
  
 ### Movies
 We've added some movie posters in the `public/images` folder, and the database is set up to use them.
@@ -69,7 +69,7 @@ This should show:
 The Add Movie page should have the buttons:
 
 - [x] `Cancel` button, which should bring the user to the Home/List Page
-- [almost] `Save` button, which should update the title and description in the database and bring the user to the Home/List Page (which now has the new movie)
+- [x] `Save` button, which should update the title and description in the database and bring the user to the Home/List Page (which now has the new movie)
 
 > Hint: Look at the /api/movie POST route -- it's been made already
 > Hint: You'll want to use the genres that are in the db for your dropdown

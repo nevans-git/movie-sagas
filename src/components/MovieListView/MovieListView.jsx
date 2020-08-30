@@ -40,7 +40,6 @@ class MovieListView extends Component {
                     <div>
                          <h3>{displayMovies.title}</h3>
                          <img src={displayMovies.poster} onClick={this.handleImageClick}/>
-                        {/* <p>{displayMovies.description}</p> */}
                     </div>
                 )
                 })}
