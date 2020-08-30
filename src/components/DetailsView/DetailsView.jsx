@@ -24,11 +24,16 @@ class DetailsView extends Component {
     render(){
         return(
             <>
-            <div>
-                <p>SPECIFIC MOVIE DETAILS GO HERE</p>
-                
-                <button onClick={this.backToMovieListBtn}>Back To Movie List</button>
-            </div>
+            {this.props.reduxState.movies.map((displayMovieDetails) => {
+                console.log(displayMovieDetails);
+                return(
+                <ul>
+                    <h3>{displayMovieDetails.title}</h3>
+                    <p>{displayMovieDetails.description}</p>
+                    <button onClick={this.backToMovieListBtn}>Back To Movie List</button>
+                </ul>
+                )
+            })}
             </>
         )
     }
