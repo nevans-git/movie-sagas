@@ -6,9 +6,7 @@ const pool = require('../modules/pool')
 router.get('/', (req, res) => {
   // Add query to get all genres
   // joining genres table and movies table
-  let queryText = `SELECT * FROM "genres"
-                  JOIN "movies"
-                  ON "movies".genre_id = "genres".id`;
+  let queryText = `SELECT * FROM "genres"`;
   pool.query(queryText).then((response) => {
     res.sendStatus(200)
 

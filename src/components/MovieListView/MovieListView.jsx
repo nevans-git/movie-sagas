@@ -23,6 +23,12 @@ class MovieListView extends Component {
         this.props.dispatch({ type: 'DISPLAY_MOVIES' })
     }
 
+    handleImageClick = () => {
+        console.log('image was clicked!');
+
+        this.props.history.push('/details');
+    }
+
     render(){
         return(
             <>
@@ -32,9 +38,9 @@ class MovieListView extends Component {
                 console.log(displayMovies);
                 return(
                     <div>
-                         <h3>{displayMovies.title}</h3>
-                         <img src={displayMovies.poster} />
-                        <p>{displayMovies.description}</p>
+                         {/* <h3>{displayMovies.title}</h3> */}
+                         <img src={displayMovies.poster} onClick={this.handleImageClick}/>
+                        {/* <p>{displayMovies.description}</p> */}
                     </div>
                 )
                 })}

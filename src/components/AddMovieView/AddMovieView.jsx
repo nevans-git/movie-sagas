@@ -7,12 +7,18 @@ import {HashRouter as Router, Route, Link} from 'react-router-dom';
 class AddMovieView extends Component {
     
     state = {
-        newMovie: '',
-        newMovieUrl: '',
-        newMovieDescription: '',
-        movieGenreId: 0
+        title: '',
+        poster: '',
+        description: '',
+        genre_id: 0
 
     }
+
+    // componentDidMount(){
+        
+    //     this.props.dispatch({ type: 'FETCH_GENRES'})
+       
+    // }
 
 
     handleAddMovieInput = (event) => {
@@ -20,7 +26,7 @@ class AddMovieView extends Component {
 
         // configuring new movie
         this.setState({
-            newMovie: event.target.value,
+            title: event.target.value,
 
         });
     }
@@ -30,7 +36,7 @@ class AddMovieView extends Component {
 
         // configuring new movie url
         this.setState({
-            newMovieUrl: event.target.value
+            poster: event.target.value
         })
     }
 
@@ -39,14 +45,14 @@ class AddMovieView extends Component {
 
         // configuring new movie description
         this.setState({
-            newMovieDescription: event.target.value
+            description: event.target.value
         })
     }
 
-    handleNewMovieSave = (newMovieData) => {
+    handleNewMovieSave = () => {
         console.log('new movie added to DB!');
 
-        this.props.dispatch({ type: 'SET_SAVE', payload: newMovieData })
+        this.props.dispatch({ type: 'SET_SAVE', payload: this.state })
         this.props.history.push('/home');
 
     }
@@ -60,63 +66,63 @@ class AddMovieView extends Component {
         switch (event.target.value){
             case 'adventure':
                 this.setState({
-                    movieGenreId: 1
+                    genre_id: 1
                 }) // set up for each case
             case 'animated':
                 this.setState({
-                    movieGenreId: 2
+                    genre_id: 2
                 });
             case 'biographical':
                 this.setState({
-                    movieGenreId: 3
+                    genre_id: 3
                 });
             case 'comedy':
                 this.setState({
-                    movieGenreId: 4
+                    genre_id: 4
                 });
             case 'disaster':
                 this.setState({
-                    movieGenreId: 5
+                    genre_id: 5
                 });
             case 'drama':
                 this.setState({
-                    movieGenreId: 6
+                    genre_id: 6
                 });
             case 'epic':
                 this.setState({
-                    movieGenreId: 7
+                    genre_id: 7
                 });
             case 'fantasy':
                 this.setState({
-                    movieGenreId: 8
+                    genre_id: 8
                 });
             case 'musical':
                 this.setState({
-                    movieGenreId: 9
+                    genre_id: 9
                 });
             case 'romantic':
                 this.setState({
-                    movieGenreId: 10
+                    genre_id: 10
                 });
             case 'science fiction':
                 this.setState({
-                    movieGenreId: 11
+                    genre_id: 11
                 });
             case 'space-opera':
                 this.setState({
-                    movieGenreId: 12
+                    genre_id: 12
                 });
             case 'superhero':
                 this.setState({
-                    movieGenreId: 13
+                    genre_id: 13
                 });
             case 'thriller':
                 this.setState({
-                    movieGenreId: 14
+                    genre_id: 14
                 });
             case 'action':
                 this.setState({
-                    movieGenreId: 15
+                    genre_id: 15
                 });
         }
         

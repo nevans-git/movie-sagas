@@ -27,7 +27,7 @@ function* getTheGenres(){
         let response = yield axios.get('/api/genre')
         console.log(response.data);
         
-        yield put({ type: 'GET_GENRES', payload: response.data })
+        yield put({ type: 'SET_GENRES', payload: response.data })
 
     } catch (error) {
         console.log('error in GET getTheGenres:', error);
@@ -55,7 +55,7 @@ function* saveMovie(action){
     try{
         let response = yield axios.post('/api/movie', action.payload)
         
-        yield put({ type: 'FETCH_NEW_MOVIE'}) // reloading
+        // yield put({ type: 'FETCH_NEW_MOVIE'}) // reloading
 
     } catch (error) {
         console.log('error in POST request!', error);

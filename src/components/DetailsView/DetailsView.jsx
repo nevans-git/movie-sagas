@@ -30,6 +30,7 @@ class DetailsView extends Component {
                 <ul>
                     <h3>{displayMovieDetails.title}</h3>
                     <p>{displayMovieDetails.description}</p>
+                    <li>{displayMovieDetails.genre}</li>
                     <button onClick={this.backToMovieListBtn}>Back To Movie List</button>
                 </ul>
                 )
